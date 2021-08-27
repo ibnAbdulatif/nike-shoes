@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #131313;
+  font-family: "Poppins";
+}
+
+.container {
+  width: 1200px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+.container .box {
+  position: inherit;
+  width: 300px;
+  height: 400px;
+  margin: 40px;
+  border-radius: 20px;
+  background-color: #232323;
+  transform-style: preserve-3d;
+}
+.container .box::before {
+  position: absolute;
+  content: "Nike";
+  text-transform: uppercase;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  opacity: 0;
+  font-size: 6rem;
+  font-weight: 900;
+  font-style: italic;
+  transition: 0.5s;
+}
+.container .box:hover::before {
+  opacity: 0.04;
+}
+.container .box::after {
+  position: absolute;
+  content: "Shoes";
+  text-transform: uppercase;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  opacity: 0;
+  font-size: 5rem;
+  font-weight: 900;
+  font-style: italic;
+  transition: 0.5s;
+}
+.container .box:hover::after {
+  opacity: 0.04;
+}
+.container .box .name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  z-index: 999;
+  opacity: 0;
+  transition: 0.5s;
+}
+.container .box:hover .name {
+  top: 40px;
+  opacity: 1;
+}
+.container .box .buy {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, 0, 75px);
+  background-color: #333;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 999;
+}
+.container .box:hover .buy {
+  bottom: 30px;
+  opacity: 1;
+}
+.container .box .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 50px);
+  z-index: 999;
+}
+.container .box:nth-child(1) .circle,
+.container .box:nth-child(1) .buy {
+  background-color: #7ebdcc;
+}
+.container .box:nth-child(2) .circle,
+.container .box:nth-child(2) .buy {
+  background-color: #ff92d1;
+}
+.container .box:nth-child(3) .circle,
+.container .box:nth-child(3) .buy {
+  background-color: #e5cd77;
+}
+.container .box .product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 300px;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 50px) rotate(-15deg);
+  z-index: 9999;
+}
+.container .box:hover .product {
+  transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
+}
+
+/*# sourceMappingURL=style.css.map */

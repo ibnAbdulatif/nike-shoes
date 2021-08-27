@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+$body-color: #131313;
+$box-color: #232323;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $body-color;
+  font-family: 'Poppins';
+}
+
+.container {
+  width: 1200px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+
+  .box {
+    position: inherit;
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    border-radius: 20px;
+    background-color: $box-color;
+    transform-style: preserve-3d;
+    &::before {
+      position: absolute;
+      content: "Nike";
+      text-transform: uppercase;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      opacity: 0;
+      font: {
+        size: 6rem;
+        weight: 900;
+        style: italic;
+      }
+      transition: 0.5s;
+    }
+    &:hover::before {
+      opacity: 0.04;
+    }
+    &::after {
+      position: absolute;
+      content: "Shoes";
+      text-transform: uppercase;
+      bottom: 20px;
+      right: 20px;
+      color: #fff;
+      opacity: 0;
+      font: {
+        size: 5rem;
+        weight: 900;
+        style: italic;
+      }
+      transition: 0.5s;
+    }
+    &:hover::after {
+      opacity: 0.04;
+    }
+
+    .name {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      color: #fff;
+      transform-style: preserve-3d;
+      transform: translate3d(0, 0, 75px);
+      z-index: 999;
+      opacity: 0;
+      transition: 0.5s;
+    }
+    &:hover .name {
+      top: 40px;
+      opacity: 1;
+    }
+
+    .buy {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, 0, 75px);
+      background-color: #333;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.5s;
+      opacity: 0;
+      z-index: 999;
+    }
+    &:hover .buy {
+      bottom: 30px;
+      opacity: 1;
+    }
+
+    .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -50%, 50px);
+      z-index: 999;
+    }
+    &:nth-child(1) {
+      .circle,
+      .buy {
+        background-color: #7ebdcc;
+      }
+    }
+    &:nth-child(2) {
+      .circle,
+      .buy {
+        background-color: #ff92d1;
+      }
+    }
+    &:nth-child(3) {
+      .circle,
+      .buy {
+        background-color: #e5cd77;
+      }
+    }
+
+    .product {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 300px;
+      transition: 0.5s;
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -50%, 50px) rotate(-15deg);
+      z-index: 9999;
+    }
+    &:hover .product {
+        transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
+    }
+  }
+}
