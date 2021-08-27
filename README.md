@@ -2,5 +2,5 @@
 3d_hover_effect
 
 
-author: ibn Abdulatif
-my website: https://ibnabdulatif.netlify.app
+author: ibn Abdulatif;
+my website: https://ibnabdulatif.netlify.app ;
